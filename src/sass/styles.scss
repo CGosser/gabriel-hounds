@@ -1,0 +1,8 @@
+$font-stack: times, sans-serif;
+$primary-font-color: white;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-font-color;
+  background-color:black;
+}
