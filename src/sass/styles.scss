@@ -1,5 +1,10 @@
 $font-stack: times, sans-serif;
 $primary-font-color: white;
+@mixin hovercraft{
+  &:hover{
+
+  }
+}
 
 body {
   font: 100% $font-stack;
@@ -83,6 +88,14 @@ img {
   max-width: 100%;
   min-width: 25%;
   &:hover {
-    z-index: 1;
+    z-index: 2;
   }
+}
+
+.bg-swap {
+  background-color: purple;
+  height: 100000px;
+  width: 100000px;
+  z-index: 3;
+  display: none;
 }
