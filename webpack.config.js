@@ -16,20 +16,45 @@ module.exports = {
   module: {
     rules: [
 
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     'css-loader'
+      //   ]
+      // },
       {
-        test: /\.css$/,
+        test: /\.(gif|png|jpe?g)$/,
         use: [
-          'style-loader',
-          'css-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
         ]
       },
+      {
+        test: /\.html$/,
+        loader: 'html-srcsets-loader',
+        options: {
+          attrs: ['img:src', ':srcset'],
+          minimize: true,
+          caseSensitive: true,
+          removeAttributeQuotes:false,
+          minifyJS:false,
+          minifyCSS:false
+        }
+      },
+
 
       {
         test: /\.scss$/,
         use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader'
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       }
 
